@@ -9,6 +9,9 @@
               <div>{{ todo.Description }}</div>
             </div>
           </v-card-title>
+          <v-card-actions>
+            <v-btn flat color="error" @click="deleteItem(todo.Id)">Delete</v-btn>
+          </v-card-actions>
         </v-card>
       </div>
     </v-flex>
@@ -32,12 +35,7 @@
                 <v-text-field label="Title*" required v-model="titleInput"></v-text-field>
               </v-flex>
               <v-flex xs12 sm6 md4>
-                <v-textarea
-                  label="Description"
-                  required
-                  bottom
-                  v-model="titleDesc"
-                ></v-textarea>
+                <v-textarea label="Description" required bottom v-model="descInput"></v-textarea>
               </v-flex>
             </v-layout>
           </v-container>
@@ -46,7 +44,12 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn color="blue darken-1" flat @click="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" flat @click="dialog = false"  v-on:click="createItem(titleInput, titleDesc)">Save</v-btn>
+          <v-btn
+            color="blue darken-1"
+            flat
+            @click="dialog = false"
+            v-on:click="createItem(titleInput, descInput)"
+          >Save</v-btn>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -63,7 +66,7 @@ export default {
       todoList: [],
       dialog: false,
       titleInput: "",
-      titleDesc: ""
+      descInput: ""
     };
   },
   created() {
@@ -94,11 +97,18 @@ export default {
       log("title: ", titleInput);
       log("description: ", descInput);
       axios
-        .put("https://pzsvbhabdl.execute-api.us-east-1.amazonaws.com/dev/create", {
-          Title: titleInput,
-          Description: descInput
-        })
-        .then(() => this.fetchList())
+        .put(
+          "https://pzsvbhabdl.execute-api.us-east-1.amazonaws.com/dev/create",
+          {
+            Title: titleInput,
+            Description: descInput
+          }
+        )
+        .then(() => {
+          this.fetchList();
+          titleInput = ""
+          descInput = ""
+        });
     }
   }
 };

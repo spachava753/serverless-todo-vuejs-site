@@ -1,5 +1,5 @@
 <template>
-  <v-layout row justify-end>
+  <v-layout row >
     <v-flex xs12 sm6 offset-sm3>
       <div v-for="todo in todoList" :key="todo.Id">
         <v-card hover>

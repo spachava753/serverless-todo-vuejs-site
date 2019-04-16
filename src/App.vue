@@ -5,13 +5,15 @@
         <span class="font-weight-light">CSP Project</span>
       </v-toolbar-title>
     </v-toolbar>
-    <v-content>
+    <v-content fluid>
       <TodoList/>
     </v-content>
 
     <v-footer height="auto">
       <v-card flat tile class="text-xs-center shadow" elevation="15" width="100%">
-        <v-card-text>This is my CSP project for computer science principles. I built the backend with Golang using AWS Lambda and connected it to AWS Api Gateway to serve my API. The front end is built with Vuejs and Vuetify. Please give me a 5.</v-card-text>
+        <v-flex class="mt-3">
+          <v-card-text>This is my CSP project for computer science principles. I built the backend with Golang using AWS Lambda and connected it to AWS Api Gateway to serve my API. The front end is built with Vuejs and Vuetify. Please give me a 5.</v-card-text>
+        </v-flex>
 
         <v-divider></v-divider>
 

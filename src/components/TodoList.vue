@@ -1,7 +1,21 @@
 <template>
-  <v-layout row >
-    <v-flex xs12 sm6 offset-sm3>
-      <div v-for="todo in todoList" :key="todo.Id">
+  <v-layout row>
+    <v-flex xs12 md6 offset-md4 offset-xs4>
+      <v-list two-line>
+        <template v-for="todo in todoList">
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title class="headline mb-3">{{ todo.Title }}</v-list-tile-title>
+              <v-list-tile-sub-title>{{ todo.Description }}</v-list-tile-sub-title>
+          </v-list-tile-content>
+          <v-list-tile-action>
+            <v-btn flat color="error" @click="deleteItem(todo.Id)">Delete</v-btn>
+          </v-list-tile-action>
+          </v-list-tile>
+          <v-divider></v-divider>
+        </template>
+      </v-list>
+      <!-- <div v-for="todo in todoList" :key="todo.Id">
         <v-card hover>
           <v-card-title primary-title>
             <div>
@@ -13,7 +27,7 @@
             <v-btn flat color="error" @click="deleteItem(todo.Id)">Delete</v-btn>
           </v-card-actions>
         </v-card>
-      </div>
+      </div> -->
     </v-flex>
     <v-dialog v-model="dialog" persistent max-width="600px">
       <template v-slot:activator="{ on }">

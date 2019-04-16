@@ -19,14 +19,14 @@
       <template v-slot:activator="{ on }">
         <!-- <v-btn color="primary" dark v-on="on">Open Dialog</v-btn> -->
         <v-flex xs12 sm12 md6>
-          <v-btn fab color="orange" v-on="on" fixed bottom right>
+          <v-btn fab color="orange" v-on="on" absolute bottom right>
             <v-icon>add</v-icon>
           </v-btn>
         </v-flex>
       </template>
       <v-card>
         <v-card-title>
-          <span class="headline">User Profile</span>
+          <span class="headline">Add a new Todo</span>
         </v-card-title>
         <v-card-text>
           <v-container grid-list-md>
@@ -106,9 +106,9 @@ export default {
         )
         .then(() => {
           this.fetchList();
-          titleInput = ""
-          descInput = ""
         });
+      this.titleInput = "";
+      this.descInput = "";
     }
   }
 };

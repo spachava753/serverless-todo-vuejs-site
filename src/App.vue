@@ -2,38 +2,39 @@
   <v-app>
     <v-toolbar app>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
+        <span class="font-weight-light">CSP Project</span>
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        flat
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
+      
     </v-toolbar>
-
     <v-content>
       <TodoList/>
     </v-content>
+
+    <v-footer height="auto">
+      <v-card flat tile class="lighten-1 text-xs-center">
+        <v-flex xs10 offset-xs1>
+          <v-card-text>This is my CSP project. It was made by me for the Create task, using different algorthims and systems. I wrote Golang serverless functions on AWS using AWS Lambda, and served the API using AWS Api Gateway. The front end is made with Vue and Vuetify components.</v-card-text>
+        </v-flex>
+        <v-divider></v-divider>
+        <v-card-text>@2019</v-card-text>
+      </v-card>
+    </v-footer>
   </v-app>
 </template>
 
 <script>
 //import HelloWorld from './components/HelloWorld'
-import TodoList from './components/TodoList'
+import TodoList from "./components/TodoList";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
     TodoList
   },
-  data () {
+  data() {
     return {
       //
-    }
+    };
   }
-}
+};
 </script>

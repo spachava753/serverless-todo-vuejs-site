@@ -1,15 +1,8 @@
 version: 0.2
 
 phases:
-  install: 
-    commands:
-      - pip3 install awscli
-  pre_build:
-    commands:
-      - npm install
   build:
     commands:
+      - npm install
       - npm run build
-  post_build:
-    commands:
-      - aws s3 sync ./dist $S3_BUCKET 
+      - aws s3 cp --recursive dist/ s3://cognito-user-pools/

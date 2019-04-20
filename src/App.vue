@@ -11,7 +11,7 @@
 
     <v-footer height="auto">
       <v-card flat tile class="text-xs-center shadow" elevation="15" width="100%">
-        <v-card-text>This is my CSP project for computer science principles. I built the backend with Golang using AWS Lambda and connected it to AWS Api Gateway to serve my API. The front end is built with Vuejs and Vuetify. Please give me a 5.</v-card-text>
+        <v-card-text>This is my CSP project for computer science principles. I built the backend with Golang using AWS Lambda and connected it to AWS Api Gateway to serve my API. The front end is built with Vuejs and Vuetify. Please give me a 5. Please</v-card-text>
 
         <v-divider></v-divider>
 

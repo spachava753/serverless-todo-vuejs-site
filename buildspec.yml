@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install
+    finally:
+      - echo 'install finished'
+  build:
+    commands:
+      - npm run build
+    finally:
+      - echo 'build completed'
+  post_build:
+    finally:
+      - echo 'time to upload to s3 bucket'
+artifacts:
+  name: csp-site
+  discard-paths: no
+  base-directory: dist

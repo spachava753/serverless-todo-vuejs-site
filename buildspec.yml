@@ -16,5 +16,7 @@ phases:
       - echo 'time to upload to s3 bucket'
 artifacts:
   name: csp-site
+  files:
+    - "**/*"
   discard-paths: no
   base-directory: dist
